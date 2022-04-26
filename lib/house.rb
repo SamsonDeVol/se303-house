@@ -13,10 +13,8 @@ class House
       "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
     elsif number == 6
       "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    elsif number == 7
-      "This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
     else
-      "This is #{phrase(number)}the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
+      "This is #{phrase(number)}the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
     end
   end
 
@@ -32,6 +30,8 @@ class House
       result = "the priest all shaven and shorn that married " + phrase(number-1)
     elsif number == 8
       result = "the man all tattered and torn that kissed " + phrase(number-1)
+    elsif number == 7
+      result = "the maiden all forlorn that milked " + phrase(number-1)
     end
     return result
   end
