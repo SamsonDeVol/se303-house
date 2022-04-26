@@ -5,10 +5,8 @@ class House
       "This is the house that Jack built.\n"
     elsif number == 2
       "This is the malt that lay in the house that Jack built.\n"
-    elsif number == 3
-      "This is the rat that ate the malt that lay in the house that Jack built.\n"
     else
-      "This is #{phrase(number)}the rat that ate the malt that lay in the house that Jack built.\n"
+      "This is #{phrase(number)}the malt that lay in the house that Jack built.\n"
     end
   end
 
@@ -32,6 +30,8 @@ class House
       result = "the dog that worried " + phrase(number-1)
     elsif number == 4
       result = "the cat that killed " + phrase(number-1)
+    elsif number == 3
+      result = "the rat that ate " + phrase(number-1)
     end
     return result
   end
