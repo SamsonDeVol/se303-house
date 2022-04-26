@@ -3,10 +3,8 @@ class House
   def line(number)
     if number == 1
       "This is the house that Jack built.\n"
-    elsif number == 2
-      "This is the malt that lay in the house that Jack built.\n"
     else
-      "This is #{phrase(number)}the malt that lay in the house that Jack built.\n"
+      "This is #{phrase(number)}the house that Jack built.\n"
     end
   end
 
@@ -32,6 +30,8 @@ class House
       result = "the cat that killed " + phrase(number-1)
     elsif number == 3
       result = "the rat that ate " + phrase(number-1)
+    elsif number == 2
+      result = "the malt that lay in " + phrase(number-1)
     end
     return result
   end
