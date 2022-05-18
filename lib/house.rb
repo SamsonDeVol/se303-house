@@ -15,31 +15,10 @@ class House
 
   def phrase(number)
     result = ""
-    case number
-    when 12
-      result = PHRASES[10] + phrase(number-1)
-    when 11
-      result = PHRASES[9] + phrase(number-1)
-    when 10
-      result = PHRASES[8] + phrase(number-1)
-    when 9
-      result = PHRASES[7] + phrase(number-1)
-    when 8
-      result = PHRASES[6] + phrase(number-1)
-    when 7
-      result = PHRASES[5] + phrase(number-1)
-    when 6
-      result = PHRASES[4] + phrase(number-1)
-    when 5
-      result = PHRASES[3] + phrase(number-1)
-    when 4
-      result = PHRASES[2] + phrase(number-1)
-    when 3
-      result = PHRASES[1] + phrase(number-1)
-    when 2
-      result = PHRASES[0]
+    for i in number.downto(2) 
+      result += PHRASES[i-2]
     end
-    return result
+    result
   end
 
   def recite 
