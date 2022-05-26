@@ -13,6 +13,7 @@ end
 class Lyrics
 
   PHRASES = [
+    "",
     "the malt that lay in ", "the rat that ate ", 
     "the cat that killed ", "the dog that worried ", 
     "the cow with the crumpled horn that tossed ", 
@@ -28,11 +29,7 @@ class Lyrics
   end
 
   def phrase
-    result = ""
-    for i in number.downto(2) 
-      result += PHRASES[i-2]
-    end
-    result
+    PHRASES[0..number-1].reverse.join
   end 
 
 end
