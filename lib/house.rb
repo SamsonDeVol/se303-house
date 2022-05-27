@@ -7,7 +7,7 @@ class House
   end
 
   def line(number)
-    "#{lyric(number).theme} #{lyric(number).phrase}the house that Jack built.\n"
+    "#{lyric(number).start} #{lyric(number).phrase}the house that Jack built.\n"
   end
 
   def recite 
@@ -41,7 +41,7 @@ class Lyrics
     PHRASES[0..number-1].reverse.join
   end 
 
-  def theme
+  def start
     "This is"
   end
 end
