@@ -60,4 +60,14 @@ class PirateLyrics < Lyrics
   end
 end
 
-puts House.new(PirateLyrics).recite
+class RandomPirateLyrics < Lyrics
+
+  def phrase
+    PHRASES.shuffle[0..number-1].join
+  end
+
+  def start
+    "Thar be"
+  end 
+end
+puts House.new(RandomPirateLyrics).recite
