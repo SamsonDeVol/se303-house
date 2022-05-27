@@ -53,4 +53,11 @@ class RandomLyrics < Lyrics
   end
 end
 
-puts House.new(RandomLyrics).recite
+class PirateLyrics < Lyrics
+
+  def start
+    "Thar be"
+  end
+end
+
+puts House.new(PirateLyrics).recite
