@@ -2,7 +2,7 @@ class House
 
   attr_accessor :lyric_template
 
-  def initialize(lyric_template: Lyrics)
+  def initialize(lyric_template = Lyrics)
     @lyric_template = lyric_template
   end
 
@@ -45,3 +45,12 @@ class Lyrics
     "This is"
   end
 end
+
+class RandomLyrics < Lyrics
+
+  def phrase
+    PHRASES.shuffle[0..number-1].join
+  end
+end
+
+puts House.new(RandomLyrics).recite
