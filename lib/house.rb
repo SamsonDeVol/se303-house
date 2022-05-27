@@ -1,12 +1,21 @@
 class House
 
+  attr_accessor :lyric_template
+
+  def initialize(lyric_template: Lyrics)
+    @lyric_template = lyric_template
+  end
+
   def line(number)
-    lyrics = Lyrics.new(number)
-    "#{lyrics.theme} #{lyrics.phrase}the house that Jack built.\n"
+    "#{lyric(number).theme} #{lyric(number).phrase}the house that Jack built.\n"
   end
 
   def recite 
     1.upto(12).map { |number| line(number) }.join("\n")
+  end
+
+  def lyric(number)
+    lyric_template.new(number)
   end
 end
 
@@ -35,5 +44,4 @@ class Lyrics
   def theme
     "This is"
   end
-
 end
