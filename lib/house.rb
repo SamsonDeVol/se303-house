@@ -49,7 +49,7 @@ end
 class RandomLyrics < Lyrics
 
   def phrase
-    PHRASES.shuffle[0..number-1].join
+    PHRASES.shuffle[1..number-1].join
   end
 end
 
@@ -63,11 +63,10 @@ end
 class RandomPirateLyrics < Lyrics
 
   def phrase
-    PHRASES.shuffle[0..number-1].join
+    PHRASES.shuffle[1..number-1].join
   end
 
   def start
     "Thar be"
   end 
 end
-puts House.new(RandomPirateLyrics).recite
