@@ -48,7 +48,6 @@ class Lyrics
       phrases.append(SUBJECTS[i] + VERBS[i])
     end
     return phrases
-    
   end
 
   def phrase
@@ -62,8 +61,14 @@ end
 
 class RandomLyrics < Lyrics
 
-  def phrase
-    phrases.shuffle[1..number-1].join
+  def phrases
+    phrases = [""]
+    subjects = SUBJECTS.shuffle
+    verbs = VERBS.shuffle
+    (0..SUBJECTS.length()-1).each do |i|
+      phrases.append(subjects[i] + verbs[i])
+    end
+    return phrases
   end
 end
 
@@ -76,13 +81,17 @@ end
 
 class RandomPirateLyrics < Lyrics
 
-  def phrase
-    phrases.shuffle[1..number-1].join
+  def phrases
+    phrases = [""]
+    subjects = SUBJECTS.shuffle
+    verbs = VERBS.shuffle
+    (0..SUBJECTS.length()-1).each do |i|
+      phrases.append(subjects[i] + verbs[i])
+    end
+    return phrases
   end
 
   def start
     "Thar be"
   end 
 end
-
-puts Lyrics.new(1).phrases
