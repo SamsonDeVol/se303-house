@@ -19,17 +19,22 @@ class House
   end
 end
 
-class Lyrics
 
-  PHRASES = [
-    "",
-    "the malt that lay in ", "the rat that ate ", 
-    "the cat that killed ", "the dog that worried ", 
-    "the cow with the crumpled horn that tossed ", 
-    "the maiden all forlorn that milked ", "the man all tattered and torn that kissed ", 
-    "the priest all shaven and shorn that married ", "the rooster that crowed in the morn that woke ", 
-    "the farmer sowing his corn that kept ", "the horse and the hound and the horn that belonged to "
-  ] 
+class Lyrics
+  
+  SUBJECTS = [
+    "the malt ", "the rat ", "the cat ", "the dog ",
+    "the cow ", "the maiden ", "the man all tattered and torn ", "the priest ",
+    "the rooster ", "the farmer ", "the horse and the hound and the horn "
+  ]
+  
+  VERBS = [
+    "that lay in ", "that ate ", "that killed ",
+    "that worried ", "with the crumpled horn that tossed ",
+    "all forlorn that milked ", "that kissed ",
+    "all shaven and shorn that married ", "that crowed in the morn that woke ",
+    "sowing his corn that kept ", "that belonged to "
+  ]
 
   attr_accessor :number
 
@@ -37,8 +42,17 @@ class Lyrics
     @number = number
   end
 
+  def phrases 
+    phrases = [""]
+    (0..SUBJECTS.length()-1).each do |i|
+      phrases.append(SUBJECTS[i] + VERBS[i])
+    end
+    return phrases
+    
+  end
+
   def phrase
-    PHRASES[0..number-1].reverse.join
+    phrases[0..number-1].reverse.join
   end 
 
   def start
@@ -49,7 +63,7 @@ end
 class RandomLyrics < Lyrics
 
   def phrase
-    PHRASES.shuffle[1..number-1].join
+    phrases.shuffle[1..number-1].join
   end
 end
 
@@ -63,10 +77,12 @@ end
 class RandomPirateLyrics < Lyrics
 
   def phrase
-    PHRASES.shuffle[1..number-1].join
+    phrases.shuffle[1..number-1].join
   end
 
   def start
     "Thar be"
   end 
 end
+
+puts Lyrics.new(1).phrases
